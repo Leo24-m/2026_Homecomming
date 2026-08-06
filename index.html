@@ -9,27 +9,30 @@
   <meta property="og:title" content="AILAB 홈커밍 2026 · 완주 1박 2일">
   <meta property="og:description" content="8월 28일(금) 10:00 다산 앞 출발 — 종남산장, 봉강요 도자기 체험, 완주 한옥에서 하룻밤.">
   <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F7F7F4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&family=Gaegu:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --paper: #F4F6F1;
-      --grid-fine: rgba(122, 158, 130, .20);
-      --grid-bold: rgba(122, 158, 130, .36);
-      --ink: #1C2434;
-      --ink-soft: #5A6473;
-      --pen-blue: #2B4CC4;
-      --pen-red: #CC2E3A;
-      --marker: #FFE86B;
-      --rule: #C3CDBF;
+      --bg: #F7F7F4;
+      --surface: #FFFFFF;
+      --line: #E4E5E0;
+      --line-soft: #EFEFEB;
+      --ink: #15181B;
+      --ink-mid: #4A535A;
+      --ink-soft: #6B747B;
+      --celadon: #35695A;
+      --celadon-mid: #63917F;
+      --tint: #EAF1ED;
+      --clay: #96573C;
       --display: 'Gowun Batang', serif;
-      --body: 'IBM Plex Sans KR', sans-serif;
+      --body: 'IBM Plex Sans KR', system-ui, sans-serif;
       --mono: 'IBM Plex Mono', 'IBM Plex Sans KR', monospace;
-      --hand: 'Gaegu', cursive;
-      --pad: clamp(1.15rem, 5vw, 3.5rem);
+      --r: 12px;
+      --pad: clamp(1.15rem, 5vw, 3rem);
     }
 
     * {
@@ -43,219 +46,224 @@
 
     body {
       margin: 0;
-      font-family: var(--body);
+      background: var(--bg);
       color: var(--ink);
-      line-height: 1.7;
-      background-color: var(--paper);
-      background-image:
-        linear-gradient(var(--grid-bold) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-bold) 1px, transparent 1px),
-        linear-gradient(var(--grid-fine) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-fine) 1px, transparent 1px);
-      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased
     }
 
     .wrap {
-      max-width: 920px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 var(--pad) 4.5rem
     }
 
+    /* ── 상단 라벨 ─────────────────────────── */
     .ledger {
       display: flex;
       justify-content: space-between;
       gap: 1rem;
+      padding: 1.5rem 0;
       font-family: var(--mono);
       font-size: .7rem;
-      letter-spacing: .08em;
-      color: var(--ink-soft);
+      font-weight: 500;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      padding: 1.4rem 0 .7rem;
-      border-bottom: 2px solid var(--ink)
+      color: var(--ink-soft)
     }
 
     .ledger b {
       font-weight: 600;
-      color: var(--ink)
+      color: var(--celadon)
     }
 
-    .mark {
-      background-image: linear-gradient(var(--marker), var(--marker));
-      background-repeat: no-repeat;
-      background-position: 0 86%;
-      background-size: 0% 44%;
-      padding: 0 .08em;
-      transition: background-size .75s cubic-bezier(.2, .85, .25, 1)
-    }
-
-    .mark.on {
-      background-size: 100% 44%
-    }
-
+    /* ── 히어로 ────────────────────────────── */
     .hero {
-      padding: 3rem 0 2.5rem
+      padding: 2rem 0 3.25rem;
+      border-bottom: 1px solid var(--line)
     }
 
     .kicker {
+      margin: 0 0 1.1rem;
       font-family: var(--mono);
-      font-size: .75rem;
-      letter-spacing: .18em;
-      color: var(--pen-red);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      margin: 0 0 .9rem
+      color: var(--celadon)
     }
 
     .hero h1 {
+      margin: 0 0 1.8rem;
       font-family: var(--display);
       font-weight: 700;
-      font-size: clamp(2.2rem, 7vw, 4rem);
-      line-height: 1.14;
-      letter-spacing: -.02em;
-      margin: 0 0 1.6rem
+      font-size: clamp(2.1rem, 6.5vw, 3.6rem);
+      line-height: 1.2;
+      letter-spacing: -.015em
     }
 
     .hero h1 small {
       display: block;
-      font-size: .4em;
-      font-weight: 400;
-      color: var(--ink-soft);
-      letter-spacing: 0;
-      margin-bottom: .55rem
+      margin-bottom: .5rem;
+      font-family: var(--body);
+      font-size: .3em;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: var(--ink-soft)
     }
 
     .facts {
       display: grid;
-      gap: .4rem;
-      font-size: clamp(1rem, 2.5vw, 1.28rem);
-      font-weight: 500;
-      margin-bottom: 1.9rem
+      gap: .55rem;
+      margin-bottom: 1.8rem
+    }
+
+    .facts div {
+      display: flex;
+      align-items: baseline;
+      gap: .85rem;
+      flex-wrap: wrap
     }
 
     .facts span {
+      flex: none;
+      width: 2.8em;
       font-family: var(--mono);
-      font-size: .68em;
-      color: var(--ink-soft);
-      margin-right: .7rem;
-      letter-spacing: .06em
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: var(--ink-soft)
+    }
+
+    .facts b {
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      font-weight: 600
+    }
+
+    .mark {
+      background-image: linear-gradient(var(--tint), var(--tint));
+      background-repeat: no-repeat;
+      background-position: 0 92%;
+      background-size: 0% 38%;
+      padding: 0 .1em;
+      transition: background-size .7s cubic-bezier(.2, .85, .25, 1)
+    }
+
+    .mark.on {
+      background-size: 100% 38%
     }
 
     .lead {
-      max-width: 33em;
-      font-size: 1rem;
-      color: var(--ink-soft);
-      margin: 0 0 2rem
+      max-width: 34em;
+      margin: 0 0 2rem;
+      color: var(--ink-mid)
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: .8rem;
+      gap: .7rem;
       align-items: center
     }
 
     .btn {
       display: inline-block;
+      padding: .7rem 1.35rem;
+      border: 1px solid var(--celadon);
+      border-radius: 999px;
+      background: var(--celadon);
+      color: #fff;
       font-family: var(--body);
+      font-size: .93rem;
       font-weight: 600;
-      font-size: .98rem;
-      padding: .8rem 1.5rem;
-      border: 2px solid var(--ink);
-      background: var(--marker);
-      color: var(--ink);
       text-decoration: none;
       cursor: pointer;
-      box-shadow: 5px 5px 0 var(--ink);
-      transition: transform .12s ease, box-shadow .12s ease
+      transition: background .15s ease, color .15s ease, border-color .15s ease
     }
 
     .btn:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 3px 3px 0 var(--ink)
-    }
-
-    .btn:active {
-      transform: translate(5px, 5px);
-      box-shadow: 0 0 0 var(--ink)
+      background: #2B584B;
+      border-color: #2B584B
     }
 
     .btn.ghost {
       background: transparent;
-      box-shadow: none;
-      border-color: var(--rule)
+      color: var(--celadon);
+      border-color: var(--line)
     }
 
     .btn.ghost:hover {
-      transform: none;
-      border-color: var(--ink)
+      background: var(--tint);
+      border-color: var(--celadon-mid);
+      color: var(--celadon)
     }
 
     .dday {
+      margin-left: .3rem;
       font-family: var(--mono);
-      font-size: .85rem;
-      color: var(--pen-red);
-      font-weight: 600
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--clay)
     }
 
+    /* ── 섹션 공통 ─────────────────────────── */
     .sec {
-      padding: 3rem 0 0
+      padding: 3.25rem 0 0
     }
 
     .sec-title {
-      display: flex;
-      align-items: baseline;
-      gap: .8rem;
+      margin: 0 0 1.5rem;
       font-family: var(--display);
       font-weight: 700;
-      font-size: clamp(1.45rem, 4vw, 1.95rem);
-      margin: 0 0 1.6rem
+      font-size: clamp(1.4rem, 3.6vw, 1.8rem);
+      letter-spacing: -.01em
     }
 
-    .sec-title::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1.5px dotted var(--rule)
-    }
-
+    /* ── 한눈에 보기 ───────────────────────── */
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
-      gap: 1px;
-      background: var(--rule);
-      border: 1.5px solid var(--rule)
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .7rem;
+      margin: 0
     }
 
     .card {
-      background: var(--paper);
-      padding: 1.1rem 1.2rem
+      padding: 1.1rem 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r)
     }
 
     .card dt {
+      margin-bottom: .45rem;
       font-family: var(--mono);
-      font-size: .68rem;
-      letter-spacing: .12em;
-      color: var(--ink-soft);
+      font-size: .67rem;
+      font-weight: 500;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      margin-bottom: .35rem
+      color: var(--celadon)
     }
 
     .card dd {
       margin: 0;
-      font-weight: 600;
       font-size: 1rem;
+      font-weight: 600;
       line-height: 1.5
     }
 
     .card dd em {
       display: block;
+      margin-top: .2rem;
       font-style: normal;
+      font-size: .85rem;
       font-weight: 400;
-      font-size: .84rem;
-      color: var(--ink-soft);
-      margin-top: .15rem
+      color: var(--ink-soft)
     }
 
+    /* ── 일정 ──────────────────────────────── */
     .day {
-      margin-bottom: 2.75rem
+      margin-bottom: 2.5rem
     }
 
     .day-head {
@@ -263,15 +271,15 @@
       justify-content: space-between;
       align-items: baseline;
       gap: 1rem;
-      padding: .7rem 0;
-      border-top: 2px solid var(--ink);
-      border-bottom: 1px solid var(--rule)
+      margin-bottom: .4rem;
+      padding-bottom: .7rem;
+      border-bottom: 1px solid var(--line)
     }
 
     .day-head h3 {
+      margin: 0;
       font-family: var(--display);
-      font-size: 1.3rem;
-      margin: 0
+      font-size: 1.25rem
     }
 
     .day-head span {
@@ -284,18 +292,17 @@
 
     .slot {
       display: grid;
-      grid-template-columns: 106px 22px 1fr;
-      gap: 0 .85rem;
-      padding: 0
+      grid-template-columns: 104px 18px 1fr;
+      gap: 0 .9rem
     }
 
     .slot time {
+      padding: .95rem 0 .2rem;
       font-family: var(--mono);
-      font-size: .83rem;
-      font-weight: 600;
-      color: var(--ink);
-      white-space: nowrap;
-      padding: .85rem 0
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--ink-mid);
+      white-space: nowrap
     }
 
     .track {
@@ -308,8 +315,8 @@
       left: 50%;
       top: 0;
       bottom: 0;
-      width: 2px;
-      background: var(--pen-blue);
+      width: 1px;
+      background: var(--line);
       transform: translateX(-50%)
     }
 
@@ -317,37 +324,33 @@
       content: '';
       position: absolute;
       left: 50%;
-      top: 1.15rem;
-      width: 11px;
-      height: 11px;
+      top: 1.25rem;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: var(--paper);
-      border: 2.5px solid var(--pen-blue);
+      background: var(--celadon);
       transform: translateX(-50%)
+    }
+
+    .slot:first-of-type .track::before {
+      top: 1.25rem
     }
 
     .slot:last-child .track::before {
       bottom: auto;
-      height: 1.6rem
-    }
-
-    .slot.move .track::before {
-      background: transparent;
-      width: 0;
-      border-left: 2px dashed var(--pen-blue);
-      opacity: .55
+      height: 1.25rem
     }
 
     .slot.move .track::after {
       width: 7px;
       height: 7px;
-      border-width: 2px;
-      opacity: .55;
-      top: 1.2rem
+      background: var(--bg);
+      border: 1px solid var(--line);
+      top: 1.3rem
     }
 
     .slot .body {
-      padding: .85rem 0
+      padding: .85rem 0 .9rem
     }
 
     .slot h4 {
@@ -357,91 +360,106 @@
     }
 
     .slot.move h4 {
+      font-size: .95rem;
       font-weight: 500;
-      color: var(--ink-soft);
-      font-size: .94rem
+      color: var(--ink-soft)
     }
 
     .slot .where {
       margin: .15rem 0 0;
-      font-size: .88rem;
+      font-size: .89rem;
       color: var(--ink-soft)
     }
 
     .note {
-      font-family: var(--hand);
-      font-size: 1.12rem;
-      color: var(--pen-red);
-      line-height: 1.35;
-      margin: .35rem 0 0
+      display: inline-block;
+      margin: .5rem 0 0;
+      padding: .3rem .7rem;
+      border-radius: 999px;
+      background: var(--tint);
+      color: var(--celadon);
+      font-size: .84rem;
+      font-weight: 500;
+      line-height: 1.5
     }
 
-    .note::before {
-      content: '↳ ';
-      opacity: .7
-    }
-
+    /* ── 가는 곳 ───────────────────────────── */
     .spots {
       display: grid;
-      gap: 1px;
-      background: var(--rule);
-      border: 1.5px solid var(--rule)
+      gap: .7rem
     }
 
     .spot {
-      background: var(--paper);
-      padding: 1.3rem 1.4rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: .5rem 1.5rem;
-      align-items: start
-    }
-
-    .spot h3 {
-      font-family: var(--display);
-      font-size: 1.2rem;
-      margin: 0 0 .25rem
+      padding: 1.35rem 1.45rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r)
     }
 
     .spot .role {
-      font-family: var(--mono);
-      font-size: .68rem;
-      letter-spacing: .12em;
-      color: var(--pen-red);
-      text-transform: uppercase;
       display: block;
-      margin-bottom: .4rem
+      margin-bottom: .4rem;
+      font-family: var(--mono);
+      font-size: .67rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--celadon)
+    }
+
+    .spot h3 {
+      margin: 0 0 .4rem;
+      font-family: var(--display);
+      font-size: 1.22rem
     }
 
     .spot p {
       margin: 0;
       font-size: .92rem;
-      color: var(--ink-soft)
+      color: var(--ink-mid)
     }
 
     .spot .links {
-      grid-column: 1/-1;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      font-size: .88rem;
-      margin-top: .3rem
+      gap: .5rem;
+      margin-top: 1rem
     }
 
-    /* ▼ 영상 */
+    .spot .links a {
+      padding: .38rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--celadon);
+      text-decoration: none;
+      transition: background .15s ease, border-color .15s ease
+    }
+
+    .spot .links a:hover {
+      background: var(--tint);
+      border-color: var(--celadon-mid)
+    }
+
+    /* ── 영상 ──────────────────────────────── */
     .videos {
-      grid-column: 1/-1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      margin: 1rem 0 .2rem
+      margin: 1.2rem 0 .2rem
+    }
+
+    figure.video-item {
+      margin: 0
     }
 
     .video {
-      border: 1.5px solid var(--rule);
-      background: #0E1420;
       position: relative;
-      aspect-ratio: 16/9
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #11150F
     }
 
     .video video {
@@ -450,48 +468,70 @@
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;
-      background: #0E1420
+      object-fit: cover
     }
 
     .video a {
-      color: var(--marker)
-    }
-
-    figure.video-item {
-      margin: 0
+      color: #fff
     }
 
     .video-cap {
+      margin: .5rem 0 0;
       font-family: var(--mono);
       font-size: .68rem;
-      letter-spacing: .08em;
-      color: var(--ink-soft);
-      margin: .45rem 0 0;
-      line-height: 1.5
+      letter-spacing: .06em;
+      line-height: 1.5;
+      color: var(--ink-soft)
     }
 
+    /* ── 챙길 것 ───────────────────────────── */
     .info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem
+      gap: .7rem
+    }
+
+    .info>div {
+      padding: 1.35rem 1.45rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r)
     }
 
     .info h3 {
+      margin: 0 0 .7rem;
       font-family: var(--display);
-      font-size: 1.12rem;
-      margin: 0 0 .5rem
+      font-size: 1.1rem
     }
 
     .info ul {
       margin: 0;
-      padding-left: 1.1rem;
-      font-size: .94rem;
-      color: var(--ink-soft)
+      padding: 0;
+      list-style: none;
+      font-size: .92rem;
+      color: var(--ink-mid)
     }
 
     .info li {
-      margin-bottom: .35rem
+      position: relative;
+      margin-bottom: .5rem;
+      padding-left: 1.1rem;
+      line-height: 1.6
+    }
+
+    .info li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .68em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--celadon-mid)
+    }
+
+    .info li:last-child {
+      margin-bottom: 0
     }
 
     .info strong {
@@ -499,32 +539,44 @@
       font-weight: 600
     }
 
+    /* ── FAQ ───────────────────────────────── */
+    .faq {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden
+    }
+
     details {
-      border-bottom: 1px solid var(--rule);
-      padding: .85rem 0
+      border-bottom: 1px solid var(--line-soft)
     }
 
-    details summary {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: .99rem;
-      list-style: none;
+    details:last-child {
+      border-bottom: 0
+    }
+
+    summary {
       display: flex;
+      align-items: flex-start;
       gap: .7rem;
-      align-items: flex-start
+      padding: 1rem 1.4rem;
+      font-size: .97rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none
     }
 
-    details summary::-webkit-details-marker {
+    summary::-webkit-details-marker {
       display: none
     }
 
-    details summary::before {
+    summary::before {
       content: '+';
-      font-family: var(--mono);
-      color: var(--pen-blue);
-      font-weight: 600;
       flex: none;
-      width: 1em
+      width: 1em;
+      font-family: var(--mono);
+      font-weight: 500;
+      color: var(--celadon)
     }
 
     details[open] summary::before {
@@ -532,75 +584,56 @@
     }
 
     details p {
-      margin: .6rem 0 0 1.7rem;
-      font-size: .93rem;
-      color: var(--ink-soft)
+      margin: 0;
+      padding: 0 1.4rem 1.1rem 3.1rem;
+      font-size: .92rem;
+      color: var(--ink-mid)
     }
 
-    .apply {
-      border: 2px solid var(--ink);
-      padding: clamp(1.4rem, 4vw, 2.3rem);
-      background: rgba(255, 255, 255, .5)
-    }
-
-    .apply h3 {
-      font-family: var(--display);
-      font-size: clamp(1.25rem, 3.5vw, 1.6rem);
-      margin: 0 0 .6rem
-    }
-
-    .apply p {
-      color: var(--ink-soft)
-    }
-
-    .contact {
-      margin: 1.4rem 0 0;
-      font-size: .94rem;
-      color: var(--ink-soft)
-    }
-
-    .contact strong {
-      color: var(--ink)
-    }
-
+    /* ── 푸터 ──────────────────────────────── */
     footer {
-      margin-top: 3.5rem;
-      padding-top: 1.3rem;
-      border-top: 2px solid var(--ink);
-      font-size: .83rem;
-      color: var(--ink-soft);
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 1rem;
-      justify-content: space-between
+      margin-top: 3.5rem;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--line);
+      font-size: .82rem;
+      color: var(--ink-soft)
     }
 
     a {
-      color: var(--pen-blue)
+      color: var(--celadon)
     }
 
     :focus-visible {
-      outline: 3px solid var(--pen-blue);
-      outline-offset: 3px
+      outline: 2px solid var(--celadon);
+      outline-offset: 3px;
+      border-radius: 4px
     }
 
     @media (max-width:560px) {
       .slot {
-        grid-template-columns: 92px 20px 1fr;
-        gap: 0 .65rem
+        grid-template-columns: 88px 16px 1fr;
+        gap: 0 .7rem
       }
 
       .slot time {
-        font-size: .75rem
-      }
-
-      .spot {
-        grid-template-columns: 1fr
+        font-size: .74rem
       }
 
       .videos {
         grid-template-columns: 1fr;
         gap: 1.2rem
+      }
+
+      summary {
+        padding: .95rem 1.1rem
+      }
+
+      details p {
+        padding: 0 1.1rem 1rem 2.8rem
       }
     }
 
@@ -623,7 +656,14 @@
       }
 
       .mark {
-        background-size: 100% 44%
+        background-size: 100% 38%
+      }
+
+      .card,
+      .spot,
+      .info>div,
+      .faq {
+        border-color: #ccc
       }
 
       .sec,
@@ -631,13 +671,8 @@
         page-break-inside: avoid
       }
 
-      details {
-        display: block
-      }
-
       details p {
-        display: block;
-        margin-left: 1.7rem
+        display: block
       }
     }
   </style>
@@ -647,11 +682,10 @@
   <div class="wrap">
 
     <div class="ledger">
-      <span>LAB NOTEBOOK · <b>홈커밍</b></span>
-      <span>2026 · <b>WANJU</b></span>
+      <span><b>홈커밍</b> · AILAB</span>
+      <span>2026 · WANJU</span>
     </div>
 
-    <!-- ✏️ 연구실 이름을 넣어 주세요 -->
     <header class="hero">
       <p class="kicker">Homecoming 2026 · 1박 2일</p>
       <h1><small>AILAB 홈커밍</small>완주에서, 하룻밤</h1>
@@ -665,14 +699,14 @@
       <p class="lead">종남산 계곡 옆에서 점심을 먹고, 위봉산성 아래 봉강요에서 각자 그릇을 하나씩 빚습니다. 저녁은 한옥에서 느긋하게. 오랜만에 얼굴 보는 자리이니 편한 마음으로 오세요.</p>
 
       <div class="cta-row">
-        <button class="btn ghost" id="icsBtn">캘린더에 저장</button>
+        <button class="btn" id="icsBtn">캘린더에 저장</button>
         <button class="btn ghost" id="shareBtn">링크 복사</button>
         <span class="dday" id="dday"></span>
       </div>
     </header>
 
     <section class="sec">
-      <h2 class="sec-title"><span>한눈에 보기</span></h2>
+      <h2 class="sec-title">한눈에 보기</h2>
       <dl class="cards">
         <div class="card">
           <dt>집결</dt>
@@ -694,7 +728,7 @@
     </section>
 
     <section class="sec">
-      <h2 class="sec-title"><span>일정</span></h2>
+      <h2 class="sec-title">일정</h2>
 
       <div class="day">
         <div class="day-head">
@@ -706,7 +740,6 @@
           <div class="body">
             <h4>다산 앞 출발</h4>
             <p class="where">09:50까지 모여 주세요</p>
-            <p class="note">늦으면 연락 주세요, 기다립니다</p>
           </div>
         </div>
 
@@ -812,28 +845,26 @@
     </section>
 
     <section class="sec">
-      <h2 class="sec-title"><span>가는 곳</span></h2>
+      <h2 class="sec-title">가는 곳</h2>
       <div class="spots">
 
         <div class="spot">
-          <div><span class="role">첫째 날 점심</span>
-            <h3>종남산장</h3>
-            <p>전북특별자치도 완주군 소양면 대흥리 467<br>063-243-8144 · 백숙과 닭볶음탕이 대표 메뉴이고, 바로 옆에 계곡이 흐릅니다.</p>
-          </div>
-          <p class="links"><a
-              href="https://map.naver.com/p/search/%EC%99%84%EC%A3%BC%20%EC%A2%85%EB%82%A8%EC%82%B0%EC%9E%A5"
-              target="_blank" rel="noopener">지도 보기 →</a>
-            <a href="tel:+82632438144">전화 걸기 →</a>
+          <span class="role">첫째 날 점심</span>
+          <h3>종남산장</h3>
+          <p>전북특별자치도 완주군 소양면 대흥리 467<br>063-243-8144 · 백숙과 닭볶음탕이 대표 메뉴이고, 바로 옆에 계곡이 흐릅니다.</p>
+          <p class="links">
+            <a href="https://map.naver.com/p/search/%EC%99%84%EC%A3%BC%20%EC%A2%85%EB%82%A8%EC%82%B0%EC%9E%A5"
+              target="_blank" rel="noopener">지도 보기</a>
+            <a href="tel:+82632438144">전화 걸기</a>
           </p>
         </div>
 
         <div class="spot">
-          <div><span class="role">첫째 날 오후</span>
-            <h3>봉강요</h3>
-            <p>전북특별자치도 완주군 소양면 위봉길 75-14<br>달항아리로 알려진 공방입니다. 물레와 손으로 그릇을 직접 빚습니다.</p>
-          </div>
+          <span class="role">첫째 날 오후</span>
+          <h3>봉강요</h3>
+          <p>전북특별자치도 완주군 소양면 위봉길 75-14<br>달항아리로 알려진 공방입니다. 물레와 손으로 그릇을 직접 빚습니다.</p>
 
-          <!-- ✏️ 영상 파일 2개: pottery-1.mp4 / pottery-2.mp4, 대표 이미지 pottery-1.jpg / pottery-2.jpg -->
+          <!-- ✏️ 영상 파일 2개: videos/1.mp4 / videos/2.mp4, 대표 이미지 thumbnail/1.png / thumbnail/2.png -->
           <div class="videos">
             <figure class="video-item">
               <div class="video">
@@ -856,19 +887,20 @@
             </figure>
           </div>
 
-          <p class="links"><a href="https://map.naver.com/p/search/%EB%B4%89%EA%B0%95%EC%9A%94" target="_blank"
-              rel="noopener">지도 보기 →</a></p>
+          <p class="links">
+            <a href="https://map.naver.com/p/search/%EB%B4%89%EA%B0%95%EC%9A%94" target="_blank" rel="noopener">지도 보기</a>
+          </p>
         </div>
 
         <!-- ✏️ 숙소 주소·연락처는 예약 확정본으로 채워 주세요 -->
         <div class="spot">
-          <div><span class="role">숙소</span>
-            <h3>완주한옥 더 클래식</h3>
-            <p>안채 · 사랑채 · 행랑채로 이루어진 한옥 숙소입니다. 방 배정은 출발 전 단체방에 공지합니다.</p>
-          </div>
-          <p class="links"><a href="https://www.wanjutce.kr/" target="_blank" rel="noopener">숙소 홈페이지 →</a>
+          <span class="role">숙소</span>
+          <h3>완주한옥 더 클래식</h3>
+          <p>안채 · 사랑채 · 행랑채로 이루어진 한옥 숙소입니다. 방 배정은 출발 전 단체방에 공지합니다.</p>
+          <p class="links">
+            <a href="https://www.wanjutce.kr/" target="_blank" rel="noopener">숙소 홈페이지</a>
             <a href="https://map.naver.com/p/search/%EC%99%84%EC%A3%BC%ED%95%9C%EC%98%A5%20%EB%8D%94%20%ED%81%B4%EB%9E%98%EC%8B%9D"
-              target="_blank" rel="noopener">지도 보기 →</a>
+              target="_blank" rel="noopener">지도 보기</a>
           </p>
         </div>
 
@@ -876,7 +908,7 @@
     </section>
 
     <section class="sec">
-      <h2 class="sec-title"><span>챙길 것</span></h2>
+      <h2 class="sec-title">챙길 것</h2>
       <div class="info">
         <div>
           <h3>꼭 필요한 것</h3>
@@ -899,19 +931,21 @@
     </section>
 
     <section class="sec">
-      <h2 class="sec-title"><span>자주 묻는 것</span></h2>
-      <details>
-        <summary>개인 차량으로 따로 가도 되나요?</summary>
-        <p>가능합니다. 인원과 차량 배정을 위해 신청할 때 알려 주세요. 종남산장과 숙소 모두 주차 공간이 있습니다.</p>
-      </details>
-      <details>
-        <summary>만든 도자기는 언제 받나요?</summary>
-        <p>건조와 가마 소성을 거쳐야 해서 당일에는 가져올 수 없습니다. 1달 뒤에 수령할 수 있으며, 주소 알려주시면 집으로 보내드리겠습니다.</p>
-      </details>
-      <details>
-        <summary>하루만 참석해도 되나요?</summary>
-        <p>괜찮습니다. 다만 식사와 방 인원을 미리 확정해야 하니 미리 알려주세요.</p>
-      </details>
+      <h2 class="sec-title">자주 묻는 것</h2>
+      <div class="faq">
+        <details>
+          <summary>개인 차량으로 따로 가도 되나요?</summary>
+          <p>가능합니다. 인원과 차량 배정을 위해 신청할 때 알려 주세요. 종남산장과 숙소 모두 주차 공간이 있습니다.</p>
+        </details>
+        <details>
+          <summary>만든 도자기는 언제 받나요?</summary>
+          <p>건조와 가마 소성을 거쳐야 해서 당일에는 가져올 수 없습니다. 1달 뒤에 수령할 수 있으며, 주소 알려주시면 집으로 보내드리겠습니다.</p>
+        </details>
+        <details>
+          <summary>하루만 참석해도 되나요?</summary>
+          <p>괜찮습니다. 다만 식사와 방 인원을 미리 확정해야 하니 미리 알려주세요.</p>
+        </details>
+      </div>
     </section>
 
     <footer>
