@@ -442,6 +442,90 @@
       border-color: var(--celadon-mid)
     }
 
+    /* ── 안채 정보 토글 ────────────────────── */
+    .roominfo {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--bg)
+    }
+
+    .roominfo summary {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .85rem 1.1rem;
+      font-size: .92rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      color: var(--celadon)
+    }
+
+    .roominfo summary::-webkit-details-marker {
+      display: none
+    }
+
+    .roominfo summary::before {
+      content: '+';
+      font-family: var(--mono);
+      font-weight: 500
+    }
+
+    .roominfo[open] summary::before {
+      content: '−'
+    }
+
+    .roominfo-body {
+      padding: 0 1.1rem 1.1rem
+    }
+
+    .roominfo-body>p {
+      margin: .2rem 0 .9rem;
+      font-size: .9rem;
+      color: var(--ink-mid)
+    }
+
+    .roominfo-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6rem;
+      margin-bottom: .9rem
+    }
+
+    .roominfo-photos img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      object-fit: cover
+    }
+
+    .roominfo-facts {
+      margin: 0 0 .8rem;
+      padding: 0;
+      list-style: none;
+      font-size: .87rem;
+      color: var(--ink-mid)
+    }
+
+    .roominfo-facts li {
+      margin-bottom: .4rem;
+      line-height: 1.6
+    }
+
+    .roominfo-facts strong {
+      color: var(--ink);
+      font-weight: 600
+    }
+
+    .roominfo-src {
+      margin: 0;
+      font-size: .76rem;
+      color: var(--ink-soft)
+    }
+
     /* ── 배정표 이미지 ─────────────────────── */
     .imgwrap {
       overflow-x: auto;
@@ -640,6 +724,10 @@
       .videos {
         grid-template-columns: 1fr;
         gap: 1.2rem
+      }
+
+      .roominfo-photos {
+        grid-template-columns: 1fr
       }
 
       summary {
@@ -924,6 +1012,24 @@
             <img src="images/roommate.png" alt="숙소 방 배정표 · 안채·사랑채·103~209호 인원 배정">
           </div>
 
+          <details class="roominfo">
+            <summary>안채 정보 보기 (시설 · 사진)</summary>
+            <div class="roominfo-body">
+              <p>집의 중심부, 햇살이 가장 잘 드는 안쪽에 위치하며 가족의 의식주를 전담하는 공간입니다.</p>
+              <div class="roominfo-photos">
+                <img src="images/anchae_1.jpg" alt="안채 안마당과 회랑">
+                <img src="images/anchae_2.jpg" alt="안채 전경과 뒷산">
+              </div>
+              <ul class="roominfo-facts">
+                <li><strong>체크인</strong> 15:00 · <strong>체크아웃</strong> 11:00</li>
+                <li><strong>구성</strong> 거실 1 · 화장실 4 · 주방 2 · 온돌룸 5 (약 50㎡, C형 기준)</li>
+                <li><strong>비치</strong> TV, 냉장고, 에어컨, 전자레인지, 식기류, 드라이기, 세면용품</li>
+                <li><strong>서비스</strong> 숯 · 그릴 · 집게 등 바베큐 장비 제공 (비용 별도)</li>
+              </ul>
+              <p class="roominfo-src">출처 · 더 보기: <a href="https://www.wanjutce.kr/Anchae" target="_blank" rel="noopener">완주한옥 더 클래식 · 안채</a></p>
+            </div>
+          </details>
+
           <p class="links">
             <a href="https://www.wanjutce.kr/" target="_blank" rel="noopener">숙소 홈페이지</a>
             <a href="https://map.naver.com/p/search/%EC%99%84%EC%A3%BC%ED%95%9C%EC%98%A5%20%EB%8D%94%20%ED%81%B4%EB%9E%98%EC%8B%9D"
@@ -940,7 +1046,7 @@
         <div>
           <h3>꼭 필요한 것</h3>
           <ul>
-            <li><strong>세면도구</strong> — 한옥 숙소는 비치되지 않을 수 있습니다</li>
+            <li><strong>세면도구</strong> — 안채에 비치되어 있지만, 본인 것을 쓰고 싶으신 분은 개인적으로 챙겨오세요</li>
             <li>흙이 묻어도 괜찮은 <strong>편한 옷</strong>과 갈아입을 옷</li>
             <li>실내용 슬리퍼</li>
             <li>개인 상비약</li>
